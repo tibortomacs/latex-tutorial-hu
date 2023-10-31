@@ -50,11 +50,16 @@
 <pre>
 \documentclass[a4paper,12pt]{article}
 \usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+\PassOptionsToPackage{defaults=hu-min,labelenums=unchanged,postdescription=unchanged}{magyar.ldf}
+\usepackage[magyar]{babel}
+\usepackage[inline]{enumitem}
 
 \begin{document}
 
-Sándor Petőfi is a famous Hungarian poet.
+\begin{enumerate*}
+  \item Listaelem
+  \item Listaelem
+\end{enumerate*}
 
 \end{document}
 </pre>

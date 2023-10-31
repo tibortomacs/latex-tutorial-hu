@@ -50,11 +50,36 @@
 <pre>
 \documentclass[a4paper,12pt]{article}
 \usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+\PassOptionsToPackage{defaults=hu-min}{magyar.ldf}
+\usepackage[magyar]{babel}
+
+\usepackage{pifont}
+
+\newcommand{\dingI}[1]
+{\ifcase\value{#1}\or\ding{172}\or\ding{173}\or\ding{174}\or\ding{175}%
+\or\ding{176}\or\ding{177}\or\ding{178}\or\ding{179}\or\ding{180}\or%
+\ding{181}\else\ding{109}\fi}
+
+\newcommand{\dingII}[1]
+{\ifcase\value{#1}\or\ding{182}\or\ding{183}\or\ding{184}\or\ding{185}%
+\or\ding{186}\or\ding{187}\or\ding{188}\or\ding{189}\or\ding{190}\or%
+\ding{191}\else\ding{108}\fi}
+
+\renewcommand{\theenumi}{\dingI{enumi}}
+\renewcommand{\theenumii}{\dingII{enumii}}
+\renewcommand{\labelenumi}{\theenumi}
+\renewcommand{\labelenumii}{\theenumii}
 
 \begin{document}
 
-Sándor Petőfi is a famous Hungarian poet.
+\begin{enumerate}
+\item Listaelem.
+  \begin{enumerate}
+    \item Listaelem.
+    \item Listaelem.
+  \end{enumerate}
+\item Listaelem.
+\end{enumerate}
 
 \end{document}
 </pre>

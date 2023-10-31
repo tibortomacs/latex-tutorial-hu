@@ -50,11 +50,24 @@
 <pre>
 \documentclass[a4paper,12pt]{article}
 \usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+\PassOptionsToPackage{defaults=hu-min}{magyar.ldf}
+\usepackage[magyar]{babel}
 
 \begin{document}
 
-Sándor Petőfi is a famous Hungarian poet.
+\begin{verse}
+\textbf{Szabó Lőrinc: Szél hozott, szél visz el} (részlet)
+
+Köd előttem, köd mögöttem,\\
+isten tudja, honnan jöttem,\\
+szél hozott, szél visz el,\\
+minek kérdjem: mért visz el?
+
+Sose néztem, merre jártam,\\
+a felhőknek kiabáltam,\\
+erdő jött: jaj, be szép!\\
+-- megcibáltam üstökét.
+\end{verse}
 
 \end{document}
 </pre>

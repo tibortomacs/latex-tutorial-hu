@@ -50,11 +50,26 @@
 <pre>
 \documentclass[a4paper,12pt]{article}
 \usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+\PassOptionsToPackage{defaults=hu-min}{magyar.ldf}
+\usepackage[magyar]{babel}
+
+\usepackage{paralist}
+\setdefaultenum{\bfseries I. {axióma.}}{\itshape (a)}{}{}
 
 \begin{document}
 
-Sándor Petőfi is a famous Hungarian poet.
+\begin{enumerate}
+  \item Listaelem.
+  \begin{enumerate}
+    \item Listaelem.
+    \begin{enumerate}
+      \item Listaelem.
+      \begin{enumerate}
+        \item Listaelem.
+      \end{enumerate}
+    \end{enumerate}
+  \end{enumerate}
+\end{enumerate}
 
 \end{document}
 </pre>

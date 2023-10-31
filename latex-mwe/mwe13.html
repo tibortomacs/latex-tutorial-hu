@@ -50,11 +50,14 @@
 <pre>
 \documentclass[a4paper,12pt]{article}
 \usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+\PassOptionsToPackage{defaults=hu-min}{magyar.ldf}
+\usepackage[magyar]{babel}
+\usepackage{xcolor,soul} % Ha a soul verziója 3.0-nál régebbi, akkor soulutf8 kell helyette.
+\setstcolor{blue}
 
 \begin{document}
 
-Sándor Petőfi is a famous Hungarian poet.
+\st{Ez a szöveg át van húzva kékkel.}
 
 \end{document}
 </pre>

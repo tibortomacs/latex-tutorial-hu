@@ -50,11 +50,27 @@
 <pre>
 \documentclass[a4paper,12pt]{article}
 \usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+\PassOptionsToPackage{defaults=hu-min}{magyar.ldf}
+\usepackage[magyar]{babel}
+
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\theenumii}{\arabic{enumii}}
+\renewcommand{\theenumiii}{\arabic{enumiii}}
+\renewcommand{\labelenumi}{\theenumi.}
+\renewcommand{\labelenumii}{\theenumi.\theenumii.}
+\renewcommand{\labelenumiii}{\theenumi.\theenumii.\theenumiii.}
 
 \begin{document}
 
-Sándor Petőfi is a famous Hungarian poet.
+\begin{enumerate}
+  \item Listaelem.
+  \begin{enumerate}
+    \item Listaelem.
+    \begin{enumerate}
+      \item Listaelem.
+    \end{enumerate}
+  \end{enumerate}
+\end{enumerate}
 
 \end{document}
 </pre>

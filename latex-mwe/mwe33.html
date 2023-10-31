@@ -50,11 +50,27 @@
 <pre>
 \documentclass[a4paper,12pt]{article}
 \usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+\PassOptionsToPackage{defaults=hu-min}{magyar.ldf}
+\usepackage[magyar]{babel}
+
+\usepackage{pifont}
+\renewcommand{\labelitemi}{\ding{42}}
+\renewcommand{\labelitemii}{\ding{43}}
 
 \begin{document}
 
-Sándor Petőfi is a famous Hungarian poet.
+\begin{itemize}
+  \item Listaelem.
+  \begin{itemize}
+    \item Listaelem.
+    \begin{itemize}
+      \item Listaelem.
+      \begin{itemize}
+        \item Listaelem.
+      \end{itemize}
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
 
 \end{document}
 </pre>

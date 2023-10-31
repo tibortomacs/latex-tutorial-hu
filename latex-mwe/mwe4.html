@@ -50,11 +50,20 @@
 <pre>
 \documentclass[a4paper,12pt]{article}
 \usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+\PassOptionsToPackage{defaults=hu-min}{magyar.ldf}
+\usepackage[magyar]{babel}
 
 \begin{document}
 
-Sándor Petőfi is a famous Hungarian poet.
+\begin{quotation}
+,,Örökös vigyora nemegyszer tévedésbe ejtette azokat, akik kissé 
+könnyelműen, a külsejük után ítélik meg embertársaikat, és ezért 
+a vigyorgó Jimmyt felületesen kezelték, vagy kicsúfolták. Az ilyen 
+emberek, felépülésük után, sokat gondolkodtak a látszat megtévesztő 
+benyomásairól, és elhatározták, hogy a jövőben senkiről sem vonnak 
+le következtetéseket alapos tájékozódás híján.''\\
+\hspace*{\fill}(Rejtő Jenő)
+\end{quotation}
 
 \end{document}
 </pre>

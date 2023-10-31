@@ -50,11 +50,13 @@
 <pre>
 \documentclass[a4paper,12pt]{article}
 \usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+\PassOptionsToPackage{defaults=hu-min}{magyar.ldf}
+\usepackage[magyar]{babel}
+\usepackage{xcolor,soul} % Ha a soul verziója 3.0-nál régebbi, akkor soulutf8 kell helyette.
 
 \begin{document}
 
-Sándor Petőfi is a famous Hungarian poet.
+\hl{Ez egy fontos szöveg, azért van kiemelve!}
 
 \end{document}
 </pre>

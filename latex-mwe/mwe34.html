@@ -50,11 +50,18 @@
 <pre>
 \documentclass[a4paper,12pt]{article}
 \usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+\PassOptionsToPackage{defaults=hu-min}{magyar.ldf}
+\usepackage[magyar]{babel}
+\usepackage{paralist}
 
 \begin{document}
 
-Sándor Petőfi is a famous Hungarian poet.
+Lista előtti szöveg.
+\begin{compactitem}
+  \item Listaelem.
+  \item Egy másik listaelem.
+\end{compactitem}
+Lista utáni szöveg.
 
 \end{document}
 </pre>

@@ -50,11 +50,17 @@
 <pre>
 \documentclass[a4paper,12pt]{article}
 \usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+\PassOptionsToPackage{defaults=hu-min}{magyar.ldf}
+\usepackage[magyar]{babel}
 
 \begin{document}
 
-Sándor Petőfi is a famous Hungarian poet.
+\begin{enumerate}
+  \item Ez egy listaelem.
+  \item\label{lista-proba} Ez egy másik listaelem.
+\end{enumerate}
+Lásd \aref{lista-proba}.~listaelemet.\\
+\Aref{lista-proba}.~listaelemben olvasható.
 
 \end{document}
 </pre>

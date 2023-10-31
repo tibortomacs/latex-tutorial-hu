@@ -50,11 +50,17 @@
 <pre>
 \documentclass[a4paper,12pt]{article}
 \usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+\PassOptionsToPackage{defaults=hu-min}{magyar.ldf}
+\usepackage[magyar]{babel}
 
 \begin{document}
 
-Sándor Petőfi is a famous Hungarian poet.
+\begin{center}
+Ez egy hosszabb szöveg, ami középre van zárva, 
+így szóelválasztások sincsenek benne. 
+De a sortörések pontjait mi is meg tudjuk adni:\\
+Ez külön sorba kerül.\\ Ez is külön sorba kerül.
+\end{center}
 
 \end{document}
 </pre>

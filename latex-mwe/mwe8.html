@@ -48,13 +48,17 @@
 
 <div class="h">
 <pre>
-\documentclass[a4paper,12pt]{article}
-\usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+\documentclass{article}
 
 \begin{document}
 
-Sándor Petőfi is a famous Hungarian poet.
+\begin{tabbing}
+0000 \= 1111 \= 2222\kill
+0    \> 1    \> 2\\
+00   \> 11   \> 22\\
+000  \> 111  \> 222\\
+0000 \> 1111 \> 2222
+\end{tabbing}
 
 \end{document}
 </pre>

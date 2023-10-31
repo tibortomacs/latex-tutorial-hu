@@ -50,11 +50,17 @@
 <pre>
 \documentclass[a4paper,12pt]{article}
 \usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+\PassOptionsToPackage{defaults=hu-min}{magyar.ldf}
+\usepackage[magyar]{babel}
 
 \begin{document}
 
-Sándor Petőfi is a famous Hungarian poet.
+\section{Nagy számok törvénye}
+\makeatletter
+\def\@currentlabel{,,Nagy számok törvénye''}
+\makeatother
+\label{sec-nszt}
+\Az{\ref{sec-nszt}} című szakaszban
 
 \end{document}
 </pre>

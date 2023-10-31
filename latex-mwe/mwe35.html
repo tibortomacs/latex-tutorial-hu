@@ -50,11 +50,17 @@
 <pre>
 \documentclass[a4paper,12pt]{article}
 \usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+\PassOptionsToPackage{defaults=hu-min}{magyar.ldf}
+\usepackage[magyar]{babel}
 
 \begin{document}
 
-Sándor Petőfi is a famous Hungarian poet.
+\begin{description}
+  \item[Címke] szöveg szöveg szöveg szöveg szöveg szöveg szöveg 
+       szöveg szöveg szöveg szöveg szöveg szöveg  
+  \item[Másik címke] szöveg szöveg szöveg szöveg szöveg szöveg szöveg 
+       szöveg szöveg szöveg szöveg szöveg szöveg  
+\end{description}
 
 \end{document}
 </pre>

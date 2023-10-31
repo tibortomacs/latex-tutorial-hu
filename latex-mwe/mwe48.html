@@ -50,11 +50,17 @@
 <pre>
 \documentclass[a4paper,12pt]{article}
 \usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+\PassOptionsToPackage{defaults=hu-min}{magyar.ldf}
+\usepackage[magyar]{babel}
+\usepackage{paralist}
 
 \begin{document}
 
-Sándor Petőfi is a famous Hungarian poet.
+Szöveg 
+\begin{inparaenum}[\itshape (a)]
+  \item szöveg
+  \item szöveg
+\end{inparaenum}
 
 \end{document}
 </pre>

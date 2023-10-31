@@ -48,13 +48,15 @@
 
 <div class="h">
 <pre>
-\documentclass[a4paper,12pt]{article}
+\documentclass{article}
 \usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+\usepackage[english,ngerman]{babel}
+\usepackage{numspell}
 
 \begin{document}
 
-Sándor Petőfi is a famous Hungarian poet.
+\numspell{1234567}\\
+\selectlanguage{english}\numspell{1234567}
 
 \end{document}
 </pre>

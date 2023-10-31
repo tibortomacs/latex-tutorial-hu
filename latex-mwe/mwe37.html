@@ -50,11 +50,21 @@
 <pre>
 \documentclass[a4paper,12pt]{article}
 \usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+\PassOptionsToPackage{defaults=hu-min}{magyar.ldf}
+\usepackage[magyar]{babel}
 
 \begin{document}
 
-Sándor Petőfi is a famous Hungarian poet.
+Lista előtti szöveg.
+\begin{enumerate}
+  \item Listaelem az első szinten.
+  \begin{enumerate}
+    \item Listaelem a második szinten.
+    \item Újabb listaelem a második szinten.
+  \end{enumerate}
+  \item Egy másik listaelem az első szinten.
+\end{enumerate}
+Lista utáni szöveg.
 
 \end{document}
 </pre>

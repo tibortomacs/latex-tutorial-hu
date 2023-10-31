@@ -50,11 +50,14 @@
 <pre>
 \documentclass[a4paper,12pt]{article}
 \usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+\PassOptionsToPackage{defaults=hu-min}{magyar.ldf}
+\usepackage[magyar]{babel}
 
 \begin{document}
 
-Sándor Petőfi is a famous Hungarian poet.
+Egy deszkán találta magát, amely a tenger hullámain zötykölődött.
+\mond Hol a Titanic? -- kérdezte, de nem kapott választ.
+\mond Ez nem lehet -- szólalt meg ismét. -- Öt perce még a kabinomban voltam.
 
 \end{document}
 </pre>

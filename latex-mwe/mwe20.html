@@ -50,11 +50,16 @@
 <pre>
 \documentclass[a4paper,12pt]{article}
 \usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+\PassOptionsToPackage{defaults=hu-min}{magyar.ldf}
+\usepackage[magyar]{babel}
+\usepackage{numspell}
 
 \begin{document}
 
-Sándor Petőfi is a famous Hungarian poet.
+\ordnumspell{1234567}\\
+\Ordnumspell{1234567}\\
+\aordnumspell{1234567}\\
+\Aordnumspell{1234567}
 
 \end{document}
 </pre>

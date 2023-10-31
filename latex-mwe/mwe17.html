@@ -50,11 +50,13 @@
 <pre>
 \documentclass[a4paper,12pt]{article}
 \usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+\PassOptionsToPackage{defaults=hu-min}{magyar.ldf}
+\usepackage[magyar]{babel}
+\usepackage{siunitx}
 
 \begin{document}
 
-Sándor Petőfi is a famous Hungarian poet.
+\num{1234567}
 
 \end{document}
 </pre>

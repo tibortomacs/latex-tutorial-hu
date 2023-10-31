@@ -50,11 +50,16 @@
 <pre>
 \documentclass[a4paper,12pt]{article}
 \usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+\PassOptionsToPackage{defaults=hu-min}{magyar.ldf}
+\usepackage[magyar]{babel}
+\usepackage{xcolor}
 
 \begin{document}
 
-Sándor Petőfi is a famous Hungarian poet.
+\colorlet{piros}{red!80}
+\textcolor{piros}{Piros szöveg.}
+\textcolor[RGB]{0,255,0}{Zöld szöveg.}
+{\color{black!50} Szürke szöveg.}
 
 \end{document}
 </pre>

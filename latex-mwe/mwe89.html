@@ -50,11 +50,18 @@
 <pre>
 \documentclass[a4paper,12pt]{article}
 \usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+\PassOptionsToPackage{defaults=hu-min}{magyar.ldf}
+\usepackage[magyar]{babel}
 
 \begin{document}
 
-Sándor Petőfi is a famous Hungarian poet.
+\begin{tabular}{|@{\ 1\,}l@{ = }r@{,}l@{\,mm }|}
+\hline
+pont & 0 & 35\\
+pica & 4 & 22\\
+inch & 25 & 4\\
+\hline
+\end{tabular}
 
 \end{document}
 </pre>

@@ -50,11 +50,18 @@
 <pre>
 \documentclass[a4paper,12pt]{article}
 \usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+\PassOptionsToPackage{defaults=hu-min}{magyar.ldf}
+\usepackage[magyar]{babel}
+\usepackage{eukdate}
+
+\makeatletter
+\renewcommand\weekday{%
+  \ifcase\theeuk@date szombat\or vasárnap\or hétfő\or kedd\or szerda\or csütörtök\or péntek\fi}
+\makeatother
 
 \begin{document}
 
-Sándor Petőfi is a famous Hungarian poet.
+Ma \today\ \weekday\ van.
 
 \end{document}
 </pre>

@@ -48,13 +48,17 @@
 
 <div class="h">
 <pre>
-\documentclass[a4paper,12pt]{article}
-\usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+\documentclass{article}
+\usepackage{pict2e,xcolor}
 
 \begin{document}
 
-Sándor Petőfi is a famous Hungarian poet.
+\begin{picture}(100,0)
+  \linethickness{10pt}
+  \put(0,0){\line(1,0){100}}
+  \linethickness{.4pt}
+  \put(0,0){\color{red}\line(1,0){100}}
+\end{picture}
 
 \end{document}
 </pre>

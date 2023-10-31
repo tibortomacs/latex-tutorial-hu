@@ -48,13 +48,28 @@
 
 <div class="h">
 <pre>
-\documentclass[a4paper,12pt]{article}
-\usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+\documentclass{article}
+\usepackage{pict2e}
 
 \begin{document}
 
-Sándor Petőfi is a famous Hungarian poet.
+\setlength{\unitlength}{1cm}
+\begin{picture}(2,2)
+  \polygon(0,0)(1,2)(2,0)
+  \put(-2pt,0){\makebox(0,0)[r]{A}}
+  \put(1,2\unitlength+2pt){\makebox(0,0)[b]{B}}
+  \put(2\unitlength+2pt,0){\makebox(0,0)[l]{C}}
+\end{picture}
+
+\vspace{1cm}
+
+% Az előző kóddal egyenértékű
+\begin{picture}(2cm,2cm)
+  \polygon(0,0)(1cm,2cm)(2cm,0)
+  \put(-2pt,0){\makebox(0,0)[r]{A}}
+  \put(1cm,2cm+2pt){\makebox(0,0)[b]{B}}
+  \put(2cm+2pt,0){\makebox(0,0)[l]{C}}
+\end{picture}
 
 \end{document}
 </pre>
