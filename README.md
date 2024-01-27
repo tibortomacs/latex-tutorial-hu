@@ -14,7 +14,7 @@ Több folyóirat technikai szerkesztőjeként napi szinten használom.
 ### [Tómács Tibor: LaTeX](https://tibortomacs.github.io/latex-tutorial-hu/latex.pdf) *(kézikönyv kezdő és haladó felhasználóknak)*
 
 <p align="center">
-  <a href="https://tibortomacs.github.io/latex-tutorial-hu/latex.pdf"><img src="latex.png" />
+  <a href="https://tibortomacs.github.io/latex-tutorial-hu/latex.pdf"><img src="latex.png" /></a>
 </p>
 
 ### [Tómács Tibor: LaTeX LaPoK](https://tibortomacs.github.io/latex-tutorial-hu/latexlapok.pdf) *(kezdő felhasználóknak)*
