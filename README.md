@@ -11,6 +11,14 @@ Ezzel a rendszerrel 1990-ben ismerkedtem meg.
 Azóta számos tananyagot, könyvet és cikket szerkesztettem vele. 
 Több folyóirat technikai szerkesztőjeként napi szinten használom.
 
+Reményeim szerint a LaTeX megismerése után az Olvasó természetesnek veszi majd,
+hogy szakdolgozatának vagy bármely más jellegű publikációjának, dokumentumának
+elkészítéséhez ezt a rendszert használja.
+
+<p align="right">
+  Dr. Tómács Tibor (szerző)
+</p>
+
 ### [Tómács Tibor: LaTeX](https://tibortomacs.github.io/latex-tutorial-hu/latex.pdf) *(kézikönyv kezdő és haladó felhasználóknak)*
 
 <p align="center">
@@ -22,3 +30,10 @@ Több folyóirat technikai szerkesztőjeként napi szinten használom.
 <p align="center">
   <a href="https://tibortomacs.github.io/latex-tutorial-hu/latexlapok.pdf"><img src="latexlapok.png" /></a>
 </p>
+
+    Szerző: Dr. Tómács Tibor egyetemi docens
+    
+    Eszterházy Károly Katolikus Egyetem
+    Informatikai Kar
+    Matematikai és Informatikai Intézet
+    Alkalmazott Matematika Tanszék
