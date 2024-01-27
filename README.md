@@ -31,9 +31,10 @@ elkészítéséhez ezt a rendszert használja.
   <a href="https://tibortomacs.github.io/latex-tutorial-hu/latexlapok.pdf"><img src="latexlapok.png" /></a>
 </p>
 
-    Szerző: Dr. Tómács Tibor egyetemi docens
-    
-    Eszterházy Károly Katolikus Egyetem
-    Informatikai Kar
-    Matematikai és Informatikai Intézet
-    Alkalmazott Matematika Tanszék
+> __Dr. Tómács Tibor__ <br>
+> egyetemi docens <br>
+>
+> Eszterházy Károly Katolikus Egyetem <br>
+> Informatikai Kar <br>
+> Matematikai és Informatikai Intézet <br>
+> Alkalmazott Matematika Tanszék <br>
