@@ -115,7 +115,6 @@ a:hover {
 
 <br>Normál ékezetes betűket repülő ékezetes betűkre konvertálja az egész dokumentumban. ("g" a global szóra utal, azaz az egész dokumentumban cserél. A \ jel \\ módon vihető be, " jel \" módon vihető be.)
 <pre onClick="clip(this);">
-%SCRIPT
 editor.replace("ö","g","\\\"{o}");
 editor.replace("ü","g","\\\"{u}");
 editor.replace("ó","g","\\'{o}");
@@ -138,7 +137,6 @@ editor.replace("Í","g","\\'{I}");
 
 <br>Repülő ékezetes betűket normál ékezetes betűkre konvertálja az egész dokumentumban.
 <pre onClick="clip(this);">
-%SCRIPT
 editor.replace("\\\"{o}","g","ö");
 editor.replace("\\\"o","g","ö");
 editor.replace("\\\"{u}","g","ü");
@@ -181,7 +179,6 @@ editor.replace("\\'I","g","Í");
 
 <br>A kijelölt szöveget url parancsba teszi.
 <pre onClick="clip(this);">
-%SCRIPT
 selected = cursor.selectedText();
 editor.insertText("\\url{" + selected + "}");
 if (selected == "") cursor.moveTo(cursor.lineNumber(),cursor.columnNumber()-1);
@@ -189,19 +186,16 @@ if (selected == "") cursor.moveTo(cursor.lineNumber(),cursor.columnNumber()-1);
 
 <br>A kijelölt szöveg betűit nagybetűre konvertálja.
 <pre onClick="clip(this);">
-%SCRIPT
 cursor.insertText(cursor.selectedText().toUpperCase());
 </pre>
 
 <br>A kijelölt szöveg betűit kisbetűre konvertálja.
 <pre onClick="clip(this);">
-%SCRIPT
 cursor.insertText(cursor.selectedText().toLowerCase());
 </pre>
 
 <br>Sortörés ki/bekapcsolása. Az utolsó állapotot a TeXstudio megjegyzi, és az újraindításnál aszerint működik.
 <pre onClick="clip(this);">
-%SCRIPT
 if (getPersistent("Editor/WordWrapMode") == "1"){
 editor.setLineWrapping(false);
 setPersistent("Editor/WordWrapMode","0")
@@ -215,13 +209,11 @@ editor.setHardLineWrapping(false);
 
 <br>Külső program indítása.
 <pre onClick="clip(this);">
-%SCRIPT
 system("cmd /C call \"C:/program/program.exe\"","")
 </pre>
 
 <br>Külső program indítása. A script futása megáll addig, amíg a külső program fut. Ezután a vágólap tartalma beíródik az editorba.
 <pre onClick="clip(this);">
-%SCRIPT
 var prog = system("cmd /C call \"[txs-app-dir]/program.exe\"");
 prog.waitForFinished();
 cursor.insertText(app.clipboard);
@@ -229,7 +221,6 @@ cursor.insertText(app.clipboard);
 
 <br>Külső program futtatása, amely kiír valamit a konzolra (stdout). Ezt a szöveget beírja a dokumentumunkba is.
 <pre onClick="clip(this);">
-%SCRIPT
 var prog = system("cmd /C call \"[txs-app-dir]/program.exe\"");
 prog.standardOutputRead.connect(function(output){editor.write(output);});
 prog.waitForFinished();
@@ -237,7 +228,6 @@ prog.waitForFinished();
 
 <br>A kijelölt sorok elé \item parancsokat tesz, és az egészet itemize környezetbe rakja.
 <pre onClick="clip(this);">
-%SCRIPT
 selected = cursor.selectedText(); 
 items = new Array();
 if (selected) {
@@ -259,7 +249,6 @@ cursor.removeSelectedText();
 
 <br>Írjon a TeXstudio-ba képfájlokat, sortöréssel elválasztva azokat, majd jelölje ki őket. Futtatva a scriptet, minden képfájlt beír figure környezetbe. Ha nincs kijelölés, akkor párbeszédablakban ki lehet választani egy fájlt.
 <pre onClick="clip(this);">
-%SCRIPT
 selected = cursor.selectedText(); 
 filenames = new Array();
 if (selected) {
@@ -281,7 +270,6 @@ cursor.removeSelectedText();
 
 <br>Adott sor és oszlopszámú array környezet készítése.
 <pre onClick="clip(this);">
-%SCRIPT
 dialog = new UniversalInputDialog()
 dialog.add("3", "Rows:", "m")
 dialog.add("3","Columns:","n")
@@ -303,7 +291,6 @@ editor.insertText(t)}
 
 <br>Kijelölt szóból környezetet készít.
 <pre onClick="clip(this);">
-%SCRIPT
 env = cursor.selectedText();
 if (env != ""){
 cursor.insertText("\\begin{"+env+"}\n\n\\end{"+env+"}");
@@ -314,7 +301,6 @@ cursor.moveTo(cursor.lineNumber()-1,0);
 
 <br>Kijelölt részt columns környezetbe rakja.
 <pre onClick="clip(this);">
-%SCRIPT
 editor.insertText("\\begin{columns}\n\\column{5.5cm}\n"+cursor.selectedText()+"\n\\column{5.5cm}\n\n\\end{columns}");
 cursor.moveTo(cursor.lineNumber()-1,0);
 cursor.removeSelectedText(); 
@@ -322,7 +308,6 @@ cursor.removeSelectedText();
 
 <br>Kijelölt részt listából kiválasztható környezetbe teszi.
 <pre onClick="clip(this);">
-%SCRIPT
 dialog = new UniversalInputDialog()
 dialog.add(["lemma","definition","theorem","proof","remark"],"Environment:","env")
 dialog.setWindowTitle("Insert environment")
@@ -334,7 +319,6 @@ cursor.removeSelectedText()}
 
 <br>Kijelölt részt adott környezetbe teszi. Az utoljára megadott környezetnévre emlékszik még a Texstudio leállítása után is, mert azt kiírja a texstudio.ini fájlba.
 <pre onClick="clip(this);">
-%SCRIPT
 if (hasPersistent("UserEnvironment") == false){setPersistent("UserEnvironment","")};
 text = getPersistent("UserEnvironment");
 dialog = new UniversalInputDialog()
@@ -349,7 +333,6 @@ setPersistent("UserEnvironment",dialog.get("env"))}
 
 <br>Kijelölt részt listából kiválasztható színnel szedi ki.
 <pre onClick="clip(this);">
-%SCRIPT
 dialog = new UniversalInputDialog()
 dialog.add(["red","blue","green","yellow","gray"],"Color:","color")
 dialog.setWindowTitle("Insert color")
@@ -363,7 +346,6 @@ editor.insertText("\\color{"+dialog.get("color")+"}")}}
 
 <br>A geometry csomag használatát segítő szkript.
 <pre onClick="clip(this);">
-%SCRIPT
 dialog = new UniversalInputDialog()
 dialog.add(["\\usepackage[options]{geometry}","\\geometry{options}","\\newgeometry{options}"],"Insert:","ins")
 dialog.add("","magnification =","a")
@@ -406,7 +388,6 @@ if (opt != ""){editor.insertText(before + opt + after)};
 
 <br>A hyperref csomag használatát segítő szkript.
 <pre onClick="clip(this);">
-%SCRIPT
 dialog = new UniversalInputDialog()
 dialog.add(["\\usepackage[options]{hyperref}","\\hypersetup{options}"],"Insert:","ins")
 dialog.add(["","0","1","2","3","4","5","6","7",],"bookmarksopenlevel","c")
@@ -455,7 +436,6 @@ if (dialog.exec() != ""){
 
 <br>A kijelölt részt listából kiválasztható betűtípussal szedi ki. Ha nem jelölünk ki szöveget, akkor csak a deklarációs parancsot szúrja be.
 <pre onClick="clip(this);">
-%SCRIPT
 dialog = new UniversalInputDialog()
 dialog.add(["normalfont","upshape","slshape","itshape","em","scshape","mdseries","bfseries","rmfamily","sffamily","ttfamily"],"Font Style Switches:","com")
 dialog.setWindowTitle("Font Style Switches")
@@ -469,7 +449,6 @@ editor.insertText("\\"+dialog.get("com")+" ")}}
 
 <br>A kijelölt részt listából kiválasztható betűmérettel szedi ki. Ha nem jelölünk ki szöveget, akkor csak a deklarációs parancsot szúrja be.
 <pre onClick="clip(this);">
-%SCRIPT
 dialog = new UniversalInputDialog()
 dialog.add(["tiny","scriptsize","footnotesize","small","normalsize","large","Large","LARGE","huge","Huge"],"Font Size Switches:","com")
 dialog.setWindowTitle("Font Size Switches")
@@ -480,5 +459,17 @@ cursor.removeSelectedText()}
 else {
 editor.insertText("\\"+dialog.get("com")+" ")}}
 </pre>
+
+<br>A kijelölt részt összevonja egy sorba.
+<pre onClick="clip(this);">
+var mytext=cursor.selectedText();
+var txt=mytext.replace(/\n/g," ");
+txt=txt.replace(/	/g," ");
+txt=txt.replace(/    /g," ");
+txt=txt.replace(/   /g," ");
+txt=txt.replace(/  /g," ");
+cursor.replaceSelectedText(txt);
+</pre>
+
 </body>
 </html>
