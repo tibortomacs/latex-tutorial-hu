@@ -60,8 +60,7 @@
     line width.code  = \setlength{\fboxrule}{##1},
     style.store      = \userframeboxstyle,
     inline.if        = userframeboxinline }
-  \SetKeys{sep=3pt,line width=0.5pt,style=\bfseries,inline}%
-  \SetKeys{#1}%
+  \SetKeys{sep=3pt,line width=0.5pt,style=\bfseries,inline,#1}%
   \ifuserframeboxinline\else\begin{center}\fi
   \fbox{\userframeboxstyle#2}%
   \ifuserframeboxinline\else\end{center}\fi
