@@ -9,16 +9,34 @@
 <style>
 
 body{
-  font-family:verdana;
-  font-size:18px;
-  max-width:1200px;
-  background:#E8E8E8;
-  padding-left:30px;
-  padding-right:30px;
+  font-family: verdana;
+  font-size: 18px;
+  max-width: 1000px;
+  background: #E8E8E8;
+  padding-left: 30px;
+  padding-right: 30px;
   }
 
 li{
-  padding-bottom:10px;
+  padding-bottom: 10px;
+  }
+
+table, td, th {
+text-align: center;
+  border: 1px solid black;
+  padding: 5px 10px 5px 10px;
+  border-collapse: collapse;
+  background-color: white;
+  font-family: monospace;
+  margin-top: 10px;
+  }
+
+a {
+  text-decoration: none;
+  }
+
+a:hover {
+  text-decoration: underline;
   }
 
 </style> 
@@ -42,12 +60,29 @@ A módszer lényege, hogy a telepítő fájl egy becsomagolt, előre telepített
 <h2>A telepítés lépései</h2>
 
 <ol>
-<li>Töltse le a 
-    <a href="https://xdepot.uni-eszterhazy.hu/index.php/s/o5fwLZG6npYmYCl/download?path=%2F&files=texlive.iso">texlive.iso</a>
-    fájlt, majd futtassa. (Másik letöltő link: <a href="http://e.pc.cd/6VQy6alK">texlive.iso</a>)</li>
+<li>Töltse le a <tt>texlive.iso</tt> fájlt az alábbi linkek valamelyikéről, majd futtassa.
+    <table>
+	  <tr>
+	    <th>link</th>
+		<th>méret</th>
+		<th>verzió</th>
+		<th>hely</th>
+	  </tr>
+      <tr>
+        <td><a href="https://xdepot.uni-eszterhazy.hu/index.php/s/o5fwLZG6npYmYCl/download?path=%2F&files=texlive.iso">texlive.iso</a></td>
+		<td>4.13GB</td>
+		<td>TeX Live 2024 (2024-05-09)</td>
+        <td>xdepot.uni-eszterhazy.hu</td>
+      </tr>
+      <tr>
+        <td><a href="http://e.pc.cd/6VQy6alK">texlive.iso</a></td>
+		<td>4.13GB</td>
+		<td>TeX Live 2024 (2024-05-09)</td>
+        <td>pCloud</td>
+      </tr></li>
+    </table>
 <li>A megjelenő fájlkezelőben futtassa a <tt>texlive-install.bat</tt> fájlt.</li>
-<!-- <li>Várjon amíg elindul a kicsomagolást végző program, majd nyomja meg az <button>Extract</button> gombot.</li> -->
-<li>Telepítés után indítsa újra a gépet.</li>
+<li>Telepítés után indítsa újra a számítógépet.</li>
 </ol>
 
 </body>
