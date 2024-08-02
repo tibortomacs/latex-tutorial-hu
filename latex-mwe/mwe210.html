@@ -53,13 +53,14 @@
 \PassOptionsToPackage{defaults=hu-min}{magyar.ldf}
 \usepackage[magyar]{babel}
 \usepackage{pgfornament}
+\AddToHook{cmd/pgf@ornament/after}{\unskip}
 
 \begin{document}
 
 \begin{center}
-\pgfornament[ydelta=-6pt,color=cyan]{97}%
+\pgfornament[ydelta=-.5em,color=cyan]{97}
 {\Large\bfseries Cím}
-\pgfornament[ydelta=-6pt,color=cyan]{98}
+\pgfornament[symmetry=v,ydelta=-.5em,color=cyan]{97}
 \end{center}
 
 \end{document}
