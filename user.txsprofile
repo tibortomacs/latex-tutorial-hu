@@ -1,0 +1,42 @@
+[General]
+IniMode=true
+
+[texmaker]
+Tools\Commands\latexmk="latexmk -gg -pdf -silent -synctex=1 -shell-escape %"
+Tools\Commands\quick=txs:///compile | txs:///view | txs:///view-log
+Tools\Commands\compile=txs:///latexmk
+Tools\After%20BibTeX%20Change=
+Startup\CheckLatexConfiguration=false
+Editor\ScanInstalledLatexPackages=false
+Update\AutoCheck=false
+Editor\Parentheses%20Completion=false
+Editor\Line%20Number%20Multiples=1
+Editor\Check%20Syntax=false
+Editor\Check%20Package=false
+Editor\Show%20Whitespace=true
+Editor\ToolTip%20Help=false
+Editor\ToolTip%20Preview=false
+Editor\ImageToolTip=false
+Editor\TexDoc%20Help%20Internal=false
+Editor\Auto%20Replace%20Commands=false
+Editor\Auto%20Indent=false
+Editor\Completion%20Case%20Sensitive=0
+Editor\Completion%20Complete%20Common%20Prefix=false
+Editor\Completion%20EOW%20Completes=false
+Editor\Completion%20Enable%20Tooltip%20Help=false
+Editor\Completion%20Enable%20Tooltip%20Preview=false
+Editor\Completion%20Prefered%20Tab=3
+Editor\Vertical%20Over%20Scroll=true
+Files\RestoreSession=false
+Grammar\Long%20Repetition%20Check=false
+Grammar\Bad%20Word%20Check=false
+Grammar\Language%20Tool%20Autorun=false
+Interface\Config%20Show%20Advanced%20Options=true
+Interface\Config%20Riddled=true
+CleanDialog\Extensions="log,aux,dvi,lof,lot,bit,idx,glo,bbl,ilg,toc,ind,out,blg,fdb_latexmk,fls,synctex.gz,synctex,nav,snm,vrb,lol,bcf,run.xml,idx,ilg,ind,xdy"
+Editor\Completion%20Files=amsfonts.cwl, amsmath.cwl, amssymb.cwl, amsthm.cwl, babel.cwl, caption.cwl, class-beamer.cwl, class-book.cwl, class-moderncv.cwl, color.cwl, colortbl.cwl, csquotes.cwl, fancybox.cwl, fancyhdr.cwl, fancyvrb.cwl, float.cwl, geometry.cwl, graphicx.cwl, hyperref.cwl, latex-dev.cwl, latex-document.cwl, latex-mathsymbols.cwl, listings.cwl, tex.cwl, tikz.cwl, url.cwl
+keysetting\size=1
+keysetting\1\id=pdf/view/external~0
+keysetting\1\key=
+Scripts\Read%20Security%20Mode=2
+Scripts\Write%20Security%20Mode=2

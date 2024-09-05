@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="hu-HU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TeX Live gyors telepítése</title>
+<base target="_blank">
+
+<style>
+
+body{
+  font-family: verdana;
+  font-size: 18px;
+  max-width: 1000px;
+  background: #E8E8E8;
+  padding-left: 30px;
+  padding-right: 30px;
+  }
+
+li{
+  padding-bottom: 10px;
+  }
+
+table, td, th {
+text-align: center;
+  border: 1px solid black;
+  padding: 5px 10px 5px 10px;
+  border-collapse: collapse;
+  background-color: white;
+  font-family: monospace;
+  margin-top: 10px;
+  }
+
+a {
+  text-decoration: none;
+  }
+
+a:hover {
+  text-decoration: underline;
+  }
+
+</style> 
+
+</head>
+<body>
+
+<h1>A TeX Live gyors telepítése Windowsra</h1>
+
+<p>A teljes TeX Live rendszer több mint 7GB, így a program honlapján található telepítési eljárás időigényes. 
+Ráadásul Windowson előfordulhat, hogy a vírusvédelem nem engedi néhány csomag letöltését, 
+ami meghiúsítja a teljes TeX Live telepítését.
+Szintén gondot jelenthet, ha a felhasználói névben ékezet vagy szóköz található.</p>
+
+<p>Az itt mutatott módszer jelentősen lerövidíti a telepítési időt, és a csomagok telepítésének akadályozását is megelőzi. 
+A módszer lényege, hogy a telepítő fájl egy becsomagolt, előre telepített teljes és hordozható TeX Live rendszer, 
+így csak a letöltéséhez és a kicsomagolásához kell idő.</p>
+
+<p>A módszer hátránya, hogy nem a legfrissebb rendszert eredményezi.</p>
+
+<h2>A telepítés lépései</h2>
+
+<ol>
+<li>Töltse le a <tt>texlive.iso</tt> fájlt az alábbi linkek valamelyikéről, majd futtassa.
+    <table>
+	  <tr>
+	    <th>link</th>
+		<th>méret</th>
+		<th>verzió</th>
+		<th>hely</th>
+	  </tr>
+      <tr>
+        <td><a href="https://xdepot.uni-eszterhazy.hu/index.php/s/o5fwLZG6npYmYCl/download?path=%2F&files=texlive.iso">texlive.iso</a></td>
+		<td>4.21GB</td>
+		<td>TeX Live 2024 (2024-08-15)</td>
+        <td>xdepot.uni-eszterhazy.hu</td>
+      </tr>
+      <tr>
+        <td><a href="https://mega.nz/file/9M4nULoY#22LAAdrUAG6cmDkIwkg5exVyeJLU3Nzcq6F0PEt4OGA">texlive.iso</a></td>
+		<td>4.21GB</td>
+		<td>TeX Live 2024 (2024-08-15)</td>
+        <td>mega.nz</td>
+      </tr></li>
+    </table>
+<li>A megjelenő fájlkezelőben futtassa a <tt>texlive-install.bat</tt> fájlt.</li>
+<li>Telepítés után indítsa újra a számítógépet.</li>
+</ol>
+
+</body>
+</html>
