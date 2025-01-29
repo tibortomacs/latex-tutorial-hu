@@ -1,2 +1,1 @@
-# latex-tutorial-hu
-LaTeX tutorials in Hungarian
+# [LaTeX tananyagok magyarul](https://tibortomacs.github.io/latex-tutorial-hu)

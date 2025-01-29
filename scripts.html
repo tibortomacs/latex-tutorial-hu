@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html"; charset="UTF-8" http-equiv="content-type">
+  <title>TeXstudio scripts</title>
+ <script>
+var clip = function(el) {
+  var range = document.createRange();
+  range.selectNodeContents(el);
+  var sel = window.getSelection();
+  sel.removeAllRanges();
+  sel.addRange(range);
+}
+</script>
+  <style>
+/* a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+ */
+ body {
+	font: normal 80% 'trebuchet ms', arial, sans-serif;
+	background: #ffffff;
+	color: black;
+}
+
+h1, h2, h3, h4, h5, h6  {
+	font: bold 120% 'century gothic', 'URW Gothic L', arial, sans-serif;
+	margin: 30px 0 15px 0;
+	padding: 5px;
+}
+
+h1, h2, h3 {
+	color: #ffffff;
+	background: #3F5881;
+}
+
+h1 {
+	font-size: 150%;
+}
+
+h2 {margin-left: 0.5em;}
+
+h3 { 
+	background: #5F6B7F;
+	margin-left: 1em;
+}
+
+h4 {
+	margin-left: 1em;
+}
+
+p, table {margin-left: 2em;}
+
+.news li {
+    padding-left: 1em;
+	margin-left: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+table, caption {
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  font-variant: inherit;
+}
+
+th {
+	border-style: none;
+	background: #3F5881;
+	color: white;
+}
+
+tr:nth-child(even) { background: #F0F0F0; }
+tr:nth-child(odd) { background: #FFF; }
+td { border-style: none; }
+ 
+.two-columns {
+	-moz-column-count: 2;
+	-moz-column-width: 320px;
+	-webkit-column-count: 2;
+	-webkit-column-width: 320px;
+	column-count: 2;
+	column-width: 320px;
+}
+ 
+code, pre {font-size: 120%}
+pre {display: table; /* not 100 % width as a block, but line break afterwards*/
+     background-color: #F0F0F0;
+     border: 1px solid #3F5881;
+     padding: 5px;
+     margin-left: 3em;
+     }
+
+.magiccomments li {margin-bottom: 1em; list-style: none}
+.magiccomments p {padding-left:1em}
+
+.command { font-family: monospace; font-size: 120% }
+.scripting_help th {margin-top: 4em; }
+
+a { color:#004faf; text-decoration:none;}
+a:visited{ color: #004faf;}
+a:hover {
+	text-decoration:none;
+	background: #FFE601;
+	-moz-box-shadow: 0px 0px 0.5em 0.4em #FFF inset;
+	-webkit-box-shadow: 0px 0px 0.5em 0.4em #FFF inset;
+	box-shadow: 0px 0px 0.5em 0.4em #FFF inset;
+}  
+  </style>
+</head>
+<body>
+
+<!-- ======================================================================= -->
+
+<h1>TeXstudio szkriptek</h1>
+
+<br>Normál ékezetes betűket repülő ékezetes betűkre konvertálja az egész dokumentumban. ("g" a global szóra utal, azaz az egész dokumentumban cserél. A \ jel \\ módon vihető be, " jel \" módon vihető be.)
+<pre onClick="clip(this);">
+editor.replace("ö","g","\\\"{o}");
+editor.replace("ü","g","\\\"{u}");
+editor.replace("ó","g","\\'{o}");
+editor.replace("ő","g","\\H{o}");
+editor.replace("ú","g","\\'{u}");
+editor.replace("é","g","\\'{e}");
+editor.replace("á","g","\\'{a}");
+editor.replace("ű","g","\\H{u}");
+editor.replace("í","g","\\'{i}");
+editor.replace("Ö","g","\\\"{O}");
+editor.replace("Ü","g","\\\"{U}");
+editor.replace("Ó","g","\\'{O}");
+editor.replace("Ő","g","\\H{O}");
+editor.replace("Ú","g","\\'{U}");
+editor.replace("É","g","\\'{E}");
+editor.replace("Á","g","\\'{A}");
+editor.replace("Ű","g","\\H{U}");
+editor.replace("Í","g","\\'{I}");
+</pre>
+
+<br>Repülő ékezetes betűket normál ékezetes betűkre konvertálja az egész dokumentumban.
+<pre onClick="clip(this);">
+editor.replace("\\\"{o}","g","ö");
+editor.replace("\\\"o","g","ö");
+editor.replace("\\\"{u}","g","ü");
+editor.replace("\\\"u","g","ü");
+editor.replace("\\'{o}","g","ó");
+editor.replace("\\'o","g","ó");
+editor.replace("\\H{o}","g","ő");
+editor.replace("\\H o","g","ő");
+editor.replace("\\'{u}","g","ú");
+editor.replace("\\'u","g","ú");
+editor.replace("\\'{e}","g","é");
+editor.replace("\\'e","g","é");
+editor.replace("\\'{a}","g","á");
+editor.replace("\\'a","g","á");
+editor.replace("\\H{u}","g","ű");
+editor.replace("\\H u","g","ű");
+editor.replace("\\'{i}","g","í");
+editor.replace("\\'i","g","í");
+editor.replace("\\'{\\i}","g","í");
+editor.replace("\\'\\i","g","í");
+editor.replace("\\\"{O}","g","Ö");
+editor.replace("\\\"O","g","Ö");
+editor.replace("\\\"{U}","g","Ü");
+editor.replace("\\\"U","g","Ü");
+editor.replace("\\'{O}","g","Ó");
+editor.replace("\\'O","g","Ó");
+editor.replace("\\H{O}","g","Ő");
+editor.replace("\\H O","g","Ő");
+editor.replace("\\'{U}","g","Ú");
+editor.replace("\\'U","g","Ú");
+editor.replace("\\'{E}","g","É");
+editor.replace("\\'E","g","É");
+editor.replace("\\'{A}","g","Á");
+editor.replace("\\'A","g","Á");
+editor.replace("\\H{U}","g","Ű");
+editor.replace("\\H U","g","Ű");
+editor.replace("\\'{I}","g","Í");
+editor.replace("\\'I","g","Í");
+</pre>
+
+<br>A kijelölt szöveget url parancsba teszi.
+<pre onClick="clip(this);">
+selected = cursor.selectedText();
+editor.insertText("\\url{" + selected + "}");
+if (selected == "") cursor.moveTo(cursor.lineNumber(),cursor.columnNumber()-1);
+</pre>
+
+<br>A kijelölt szöveg betűit nagybetűre konvertálja.
+<pre onClick="clip(this);">
+cursor.insertText(cursor.selectedText().toUpperCase());
+</pre>
+
+<br>A kijelölt szöveg betűit kisbetűre konvertálja.
+<pre onClick="clip(this);">
+cursor.insertText(cursor.selectedText().toLowerCase());
+</pre>
+
+<br>Sortörés ki/bekapcsolása. Az utolsó állapotot a TeXstudio megjegyzi, és az újraindításnál aszerint működik.
+<pre onClick="clip(this);">
+if (getPersistent("Editor/WordWrapMode") == "1"){
+editor.setLineWrapping(false);
+setPersistent("Editor/WordWrapMode","0")
+} else {
+editor.setLineWrapping(true);
+setPersistent("Editor/WordWrapMode","1")
+}
+editor.setSoftLimitedLineWrapping(false);
+editor.setHardLineWrapping(false);
+</pre>
+
+<br>Külső program indítása.
+<pre onClick="clip(this);">
+system("cmd /C call \"C:/program/program.exe\"","")
+</pre>
+
+<br>Külső program indítása. A script futása megáll addig, amíg a külső program fut. Ezután a vágólap tartalma beíródik az editorba.
+<pre onClick="clip(this);">
+var prog = system("cmd /C call \"[txs-app-dir]/program.exe\"");
+prog.waitForFinished();
+cursor.insertText(app.clipboard);
+</pre>
+
+<br>Külső program futtatása, amely kiír valamit a konzolra (stdout). Ezt a szöveget beírja a dokumentumunkba is.
+<pre onClick="clip(this);">
+var prog = system("cmd /C call \"[txs-app-dir]/program.exe\"");
+prog.standardOutputRead.connect(function(output){editor.write(output);});
+prog.waitForFinished();
+</pre>
+
+<br>A kijelölt sorok elé \item parancsokat tesz, és az egészet itemize környezetbe rakja.
+<pre onClick="clip(this);">
+selected = cursor.selectedText(); 
+items = new Array();
+if (selected) {
+items = selected.split("\n");
+n = items.length;
+}
+else {
+items[0] = ""; 
+n = 1;
+}
+editor.insertText("\\begin{itemize}\n");
+for (i = 0; i < n; i++) {
+editor.insertText("\\item "+items[i]+"\n");
+}
+editor.insertText("\\end{itemize}\n");
+cursor.moveTo(cursor.lineNumber()-2,6);
+cursor.removeSelectedText(); 
+</pre>
+
+<br>Írjon a TeXstudio-ba képfájlokat, sortöréssel elválasztva azokat, majd jelölje ki őket. Futtatva a scriptet, minden képfájlt beír figure környezetbe. Ha nincs kijelölés, akkor párbeszédablakban ki lehet választani egy fájlt.
+<pre onClick="clip(this);">
+selected = cursor.selectedText(); 
+filenames = new Array();
+if (selected) {
+filenames = selected.split("\n");
+n = filenames.length;
+}
+else {
+fileChooser.exec(); 
+pth = fileChooser.fileName(); 
+filenames[0] = pth.replace(/^.*\//, ''); 
+n = 1;
+}
+for (i = 0; i < n; i++) {
+editor.insertText("\\begin{figure}[!h]\n\\centering\n\\includegraphics[width=5cm]{"+filenames[i]+"}\n\\caption{}\n\\label{fig-"+filenames[i]+"}\n\\end{figure}\n");
+}
+cursor.moveTo(cursor.lineNumber()-3,10);
+cursor.removeSelectedText(); 
+</pre>
+
+<br>Adott sor és oszlopszámú array környezet készítése.
+<pre onClick="clip(this);">
+dialog = new UniversalInputDialog()
+dialog.add("3", "Rows:", "m")
+dialog.add("3","Columns:","n")
+if (dialog.exec() != ""){ 
+t = "";
+s = "";
+for (j = 1; j <= dialog.get("n"); j++){s += "c"}
+for (i = 1; i <= dialog.get("m"); i++)
+{
+for (j = 1; j <= dialog.get("n"); j++)
+{
+if (j < dialog.get("n")){t += i+""+j+" & "}else{t += i+""+j};
+}
+t += "\\\\ \n";
+}
+t = "\\begin{array}{"+s+"}\n" + t + "\\end{array}";
+editor.insertText(t)}
+</pre>
+
+<br>Kijelölt szóból környezetet készít.
+<pre onClick="clip(this);">
+env = cursor.selectedText();
+if (env != ""){
+cursor.insertText("\\begin{"+env+"}\n\n\\end{"+env+"}");
+cursor.removeSelectedText();
+cursor.moveTo(cursor.lineNumber()-1,0); 
+} else {warning("Először jelöljön ki egy szót!")};
+</pre>
+
+<br>Kijelölt részt columns környezetbe rakja.
+<pre onClick="clip(this);">
+editor.insertText("\\begin{columns}\n\\column{5.5cm}\n"+cursor.selectedText()+"\n\\column{5.5cm}\n\n\\end{columns}");
+cursor.moveTo(cursor.lineNumber()-1,0);
+cursor.removeSelectedText(); 
+</pre>
+
+<br>Kijelölt részt listából kiválasztható környezetbe teszi.
+<pre onClick="clip(this);">
+dialog = new UniversalInputDialog()
+dialog.add(["lemma","definition","theorem","proof","remark"],"Environment:","env")
+dialog.setWindowTitle("Insert environment")
+if (dialog.exec() != ""){ 
+editor.insertText("\\begin{"+dialog.get("env")+"}\n"+cursor.selectedText()+"\n\\end{"+dialog.get("env")+"}");
+cursor.moveTo(cursor.lineNumber()-1,0);
+cursor.removeSelectedText()} 
+</pre>
+
+<br>Kijelölt részt adott környezetbe teszi. Az utoljára megadott környezetnévre emlékszik még a Texstudio leállítása után is, mert azt kiírja a texstudio.ini fájlba.
+<pre onClick="clip(this);">
+if (hasPersistent("UserEnvironment") == false){setPersistent("UserEnvironment","")};
+text = getPersistent("UserEnvironment");
+dialog = new UniversalInputDialog()
+dialog.add(text,"Environment:","env");
+dialog.setWindowTitle("Insert environment");
+if (dialog.exec() != ""){ 
+editor.insertText("\\begin{"+dialog.get("env")+"}\n"+cursor.selectedText()+"\n\\end{"+dialog.get("env")+"}");
+cursor.moveTo(cursor.lineNumber()-1,0);
+cursor.removeSelectedText();
+setPersistent("UserEnvironment",dialog.get("env"))}
+</pre>
+
+<br>Kijelölt részt listából kiválasztható színnel szedi ki.
+<pre onClick="clip(this);">
+dialog = new UniversalInputDialog()
+dialog.add(["red","blue","green","yellow","gray"],"Color:","color")
+dialog.setWindowTitle("Insert color")
+if (dialog.exec() != ""){ 
+if (cursor.selectedText() != ""){
+editor.insertText("{\\color{"+dialog.get("color")+"}"+cursor.selectedText()+"}");
+cursor.removeSelectedText()} 
+else {
+editor.insertText("\\color{"+dialog.get("color")+"}")}}
+</pre>
+
+<br>A geometry csomag használatát segítő szkript.
+<pre onClick="clip(this);">
+dialog = new UniversalInputDialog()
+dialog.add(["\\usepackage[options]{geometry}","\\geometry{options}","\\newgeometry{options}"],"Insert:","ins")
+dialog.add("","magnification =","a")
+dialog.add("","paper width =","b")
+dialog.add("","paper height =","c")
+dialog.add("","text width =","d")
+dialog.add("","text height =","e")
+dialog.add("","inner margin =","f")
+dialog.add("","outer margin =","g")
+dialog.add("","top margin =","h")
+dialog.add("","bottom margin=","i")
+dialog.add("","head height =","j")
+dialog.add("","head sep =","k")
+dialog.add("","foot skip =","l")
+dialog.add("","marginpar width =","m")
+dialog.add("","marginpar sep =","n")
+dialog.setWindowTitle("Package geometry");
+if (dialog.exec() != ""){
+opt = "";
+if (dialog.get("ins") == "\\usepackage[options]{geometry}"){before = "\\usepackage["; after = "]{geometry}"};
+if (dialog.get("ins") == "\\geometry{options}"){before = "\\geometry{"; after = "}"};
+if (dialog.get("ins") == "\\newgeometry{options}"){before = "\\newgeometry{"; after = "}\n\n\\restoregeometry"};
+if (dialog.get("a") != ""){opt = "mag=" + dialog.get("a")};
+if (dialog.get("b") != ""){if (opt != ""){opt = opt + ","}; opt = opt + "paperwidth=" + dialog.get("b")};
+if (dialog.get("c") != ""){if (opt != ""){opt = opt + ","}; opt = opt + "paperheight=" + dialog.get("c")};
+if (dialog.get("d") != ""){if (opt != ""){opt = opt + ","}; opt = opt + "textwidth=" + dialog.get("d")};
+if (dialog.get("e") != ""){if (opt != ""){opt = opt + ","}; opt = opt + "textheight=" + dialog.get("e")};
+if (dialog.get("f") != ""){if (opt != ""){opt = opt + ","}; opt = opt + "inner=" + dialog.get("f")};
+if (dialog.get("g") != ""){if (opt != ""){opt = opt + ","}; opt = opt + "outer=" + dialog.get("g")};
+if (dialog.get("h") != ""){if (opt != ""){opt = opt + ","}; opt = opt + "top=" + dialog.get("h")};
+if (dialog.get("i") != ""){if (opt != ""){opt = opt + ","}; opt = opt + "bottom=" + dialog.get("i")};
+if (dialog.get("j") != ""){if (opt != ""){opt = opt + ","}; opt = opt + "headheight=" + dialog.get("j")};
+if (dialog.get("k") != ""){if (opt != ""){opt = opt + ","}; opt = opt + "headsep=" + dialog.get("k")};
+if (dialog.get("l") != ""){if (opt != ""){opt = opt + ","}; opt = opt + "footskip=" + dialog.get("l")};
+if (dialog.get("m") != ""){if (opt != ""){opt = opt + ","}; opt = opt + "marginparwidth=" + dialog.get("m")};
+if (dialog.get("n") != ""){if (opt != ""){opt = opt + ","}; opt = opt + "marginparsep=" + dialog.get("n")};
+if (opt != ""){editor.insertText(before + opt + after)};
+}
+</pre>
+
+<br>A hyperref csomag használatát segítő szkript.
+<pre onClick="clip(this);">
+dialog = new UniversalInputDialog()
+dialog.add(["\\usepackage[options]{hyperref}","\\hypersetup{options}"],"Insert:","ins")
+dialog.add(["","0","1","2","3","4","5","6","7",],"bookmarksopenlevel","c")
+dialog.add(["default","Fit","FitH","FitV"],"pdfstartview","i")
+dialog.add("","linkcolor","j")
+dialog.add("","citecolor","k")
+dialog.add("","pagecolor","l")
+dialog.add("","filecolor","m")
+dialog.add("","urlcolor","n")
+dialog.add("","allcolors","o")
+dialog.add(true,"bookmarks","a")
+dialog.add(false,"bookmarksopen","b")
+dialog.add(false,"bookmarksnumbered","d")
+dialog.add(false,"linktocpage","e")
+dialog.add(false,"breaklinks","f")
+dialog.add(false,"colorlinks","g")
+dialog.add(false,"pdfpagemode=FullScreen","h")
+dialog.add(true,"linkframe","p")
+dialog.add(true,"hyperfootnotes","q")
+dialog.setWindowTitle("Package hyperref");
+if (dialog.exec() != ""){
+	opt = "";
+	if (dialog.get("ins") == "\\usepackage[options]{hyperref}"){before = "\\usepackage"; after = "{hyperref}"}
+		else {before = "\\hypersetup{"; after = "}"};
+	if (dialog.get("a") == false){opt = "bookmarks=false"};
+	if (dialog.get("b") == true){if (opt != ""){opt = opt + ","}; opt = opt + "bookmarksopen"};
+	if (dialog.get("c") != ""){if (opt != ""){opt = opt + ","}; opt = opt + "bookmarksopenlevel=" + dialog.get("c")};
+	if (dialog.get("d") == true){if (opt != ""){opt = opt + ","}; opt = opt + "bookmarksnumbered"};
+	if (dialog.get("e") == true){if (opt != ""){opt = opt + ","}; opt = opt + "linktocpage"};
+	if (dialog.get("f") == true){if (opt != ""){opt = opt + ","}; opt = opt + "breaklinks"};
+	if (dialog.get("g") == true){if (opt != ""){opt = opt + ","}; opt = opt + "colorlinks"};
+	if (dialog.get("h") == true){if (opt != ""){opt = opt + ","}; opt = opt + "pdfpagemode=FullScreen"};
+	if (dialog.get("i") != "default"){if (opt != ""){opt = opt + ","}; opt = opt + "pdfstartview=" + dialog.get("i")};
+	if (dialog.get("j") != ""){if (opt != ""){opt = opt + ","}; opt = opt + "linkcolor=" + dialog.get("j")};
+	if (dialog.get("k") != ""){if (opt != ""){opt = opt + ","}; opt = opt + "citecolor=" + dialog.get("k")};
+	if (dialog.get("l") != ""){if (opt != ""){opt = opt + ","}; opt = opt + "pagecolor=" + dialog.get("l")};
+	if (dialog.get("m") != ""){if (opt != ""){opt = opt + ","}; opt = opt + "filecolor=" + dialog.get("m")};
+	if (dialog.get("n") != ""){if (opt != ""){opt = opt + ","}; opt = opt + "urlcolor=" + dialog.get("n")};
+	if (dialog.get("o") != ""){if (opt != ""){opt = opt + ","}; opt = opt + "allcolors=" + dialog.get("o")};
+	if (dialog.get("p") == false){if (opt != ""){opt = opt + ","}; opt = opt + "pdfborder={0 0 0}"};
+	if (dialog.get("q") == false){if (opt != ""){opt = opt + ","}; opt = opt + "hyperfootnotes=false"};
+	if (dialog.get("ins") == "\\hypersetup{options}"){if (opt != ""){editor.insertText(before + opt + after)}}
+		else {if (opt != ""){editor.insertText(before + "[" + opt + "]" + after)} else {editor.insertText(before + after)}}
+}
+</pre> 
+
+<br>A kijelölt részt listából kiválasztható betűtípussal szedi ki. Ha nem jelölünk ki szöveget, akkor csak a deklarációs parancsot szúrja be.
+<pre onClick="clip(this);">
+dialog = new UniversalInputDialog()
+dialog.add(["normalfont","upshape","slshape","itshape","em","scshape","mdseries","bfseries","rmfamily","sffamily","ttfamily"],"Font Style Switches:","com")
+dialog.setWindowTitle("Font Style Switches")
+if (dialog.exec() != ""){ 
+if (cursor.selectedText() != ""){
+editor.insertText("{\\"+dialog.get("com")+" "+cursor.selectedText()+"}");
+cursor.removeSelectedText()} 
+else {
+editor.insertText("\\"+dialog.get("com")+" ")}}
+</pre>
+
+<br>A kijelölt részt listából kiválasztható betűmérettel szedi ki. Ha nem jelölünk ki szöveget, akkor csak a deklarációs parancsot szúrja be.
+<pre onClick="clip(this);">
+dialog = new UniversalInputDialog()
+dialog.add(["tiny","scriptsize","footnotesize","small","normalsize","large","Large","LARGE","huge","Huge"],"Font Size Switches:","com")
+dialog.setWindowTitle("Font Size Switches")
+if (dialog.exec() != ""){ 
+if (cursor.selectedText() != ""){
+editor.insertText("{\\"+dialog.get("com")+" "+cursor.selectedText()+"}");
+cursor.removeSelectedText()} 
+else {
+editor.insertText("\\"+dialog.get("com")+" ")}}
+</pre>
+
+<br>A kijelölt részt összevonja egy sorba.
+<pre onClick="clip(this);">
+var mytext=cursor.selectedText();
+var txt=mytext.replace(/\n/g," ");
+txt=txt.replace(/	/g," ");
+txt=txt.replace(/    /g," ");
+txt=txt.replace(/   /g," ");
+txt=txt.replace(/  /g," ");
+cursor.replaceSelectedText(txt);
+</pre>
+
+</body>
+</html>

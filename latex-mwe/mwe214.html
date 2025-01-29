@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LaTeX példa</title>
+    <meta charset="UTF-8">
+    <link href="mwe.png" rel="shortcut icon" type="image/png">
+    <script src="ace.min.js"></script>
+    <script src="runlatex.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Courier+Prime|Roboto+Condensed&display=swap" rel="stylesheet">
+
+    <style type="text/css" media="screen">
+      .ace_editor {
+        font-size: 14px;
+        border: 2px solid lightgray;
+        margin-bottom: 2px !important;
+        width: 100%;
+        }
+      body {
+        font: normal 18px 'Roboto Condensed';
+        margin: auto;
+        max-width: 900px;
+        background-color:#f2f2f2;
+        }
+      div.h {
+        background-color: #F5F5FF;
+        margin: .5em 0;
+        }
+      pre {
+        background-color: #EEE;
+        margin:0;padding: .5em;
+        }
+    </style>
+
+    <script>
+      runlatex.editorlines = 50;
+      runlatex.overleafURI = null;
+      runlatex.texts = {
+        "TeXLive.net":   "PDF-be konvertálás",
+        "Delete Output": "Kimenet törlése",
+        "Compiling PDF": "Kérem várjon",
+        }
+    </script>
+  </head>
+
+<body>
+
+<h3>LaTeX példa Tómács Tibor <a href="https://tibortomacs.github.io/latex-tutorial-hu/latex.pdf">LaTeX</a> című könyvéből</h3>
+
+<div class="h">
+<pre>
+\documentclass[a4paper,12pt]{article}
+\usepackage[T1]{fontenc}
+\PassOptionsToPackage{defaults=hu-min}{magyar.ldf}
+\usepackage[magyar]{babel}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.text}
+
+\begin{document}
+
+% ZÖLD SZÖVEG
+\begin{tikzpicture}[baseline=-3pt]
+\path [decorate,
+       decoration={text effects along path,
+                   text={SZ{Ö}VEG},
+                   text effects/.cd,
+                   scale text to path},
+       text effects={text=green,
+                     character widths={inner xsep=1pt}}]
+(0,0) -- (3,2);
+\end{tikzpicture}
+% KÉK SZÖVEG
+\begin{tikzpicture}[baseline]
+\path [decorate,
+       decoration={text effects along path,
+                   text={SZ{Ö}VEG},
+                   text effects/.cd,
+                   text along path,
+                   scale text to path},
+       text effects={text=blue,
+                     character widths={inner xsep=0pt}}]
+(0,0) -- (3,2);
+\end{tikzpicture}
+% SÁRGA SZÖVEG
+\begin{tikzpicture}[baseline]
+\path [decorate,
+       decoration={text effects along path,
+                   text={SZ{Ö}VEG},
+                   text effects/.cd,
+                   text along path,
+                   scale text to path,
+                   characters={font=\color{yellow},
+                               xslant=0.6666}},
+       text effects={character widths={inner xsep=0pt}}]
+(0,0) -- (3,2);
+\end{tikzpicture}
+
+\end{document}
+</pre>
+</div>
+</body>
