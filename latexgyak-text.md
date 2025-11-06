@@ -124,7 +124,7 @@ A koszinusz és szinusz függvények hányadosát kotangensnek nevezzük, azaz
 
 ## 6. gyakorlat
 
-\emph{kiemelendő szöveg} és \verb|verbatim szöveg|
+\emph{kiemelendő szöveg} és \verb\|verbatim szöveg\|
 
 \documentclass{article}
 
@@ -148,7 +148,7 @@ Egy Python kód
 
 def print_hello_world(name):
 
-    print("Helló, ", name, "!")
+print("Helló, ", name, "!")
 
 \# Calling the function
 
