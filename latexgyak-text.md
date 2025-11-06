@@ -59,17 +59,17 @@
 
 ## 5. gyakorlat
 
-  Legyen X egy halmaz. Az ... halmazrendszert ...-algebrának nevezzük, ha
-  Ekkor az ... rendezett párt mérhető térnek, az ... elemeit mérhető halmazoknak nevezzük.
-  A ... függvényt mértéknek nevezzük az ... mérhető téren, ha ... és
-  minden ... diszjunkt rendszerre. Ekkor ...-t mértéktérnek, ...-t az A mértékének  nevezzük.
-  Legyen X egy halmaz, ... és ... a ...-höz tartozó külső mérték. ... pontosan akkor ...-mérhető, ha
-  Az (1) szükségessége triviálisan teljesül.
-  Ha X egy halmaz és ..., akkor az
-  függvényt az A karakterisztikus függvényének nevezzük.
-  Legyen ... mértéktér és ... mérhető függvények. Ha g integrálható és ...-re, akkor
-  A mérték folytonossága a következő miatt igaz:
-  A koszinusz és szinusz függvények hányadosát kotangensnek nevezzük, azaz
+    Legyen X egy halmaz. Az ... halmazrendszert ...-algebrának nevezzük, ha
+    Ekkor az ... rendezett párt mérhető térnek, az ... elemeit mérhető halmazoknak nevezzük.
+    A ... függvényt mértéknek nevezzük az ... mérhető téren, ha ... és
+    minden ... diszjunkt rendszerre. Ekkor ...-t mértéktérnek, ...-t az A mértékének  nevezzük.
+    Legyen X egy halmaz, ... és ... a ...-höz tartozó külső mérték. ... pontosan akkor ...-mérhető, ha
+    Az (1) szükségessége triviálisan teljesül.
+    Ha X egy halmaz és ..., akkor az
+    függvényt az A karakterisztikus függvényének nevezzük.
+    Legyen ... mértéktér és ... mérhető függvények. Ha g integrálható és ...-re, akkor
+    A mérték folytonossága a következő miatt igaz:
+    A koszinusz és szinusz függvények hányadosát kotangensnek nevezzük, azaz
 
 ## 6. gyakorlat
 
