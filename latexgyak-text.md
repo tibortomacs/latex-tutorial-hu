@@ -22,7 +22,7 @@
     Oldja meg úgy is a feladatot, ha az egyik oldalról tudjuk, hogy  3 cm hosszú!
     Sorolja fel a felhasznált tételek neveit!
     Bizonyítsa be, hogy két ikerprímszám összege osztható 12-vel, ha a prímszámok 3-nál nagyobbak!
-    Írja le az ikerprímszám definícióját! Lásd például Kiss -Mátyás könyvben.
+    Írja le az ikerprímszám definícióját! Lásd például Kiss-Mátyás könyvben.
     Mit jelent a tökéletes szám fogalma?
     Táblázat
     év
@@ -73,7 +73,7 @@
 
 ## 6. gyakorlat
 
-    \emph{kiemelendő szöveg} és \verb\|verbatim szöveg\|
+    \emph{kiemelendő szöveg} és \verb|verbatim szöveg|
     \documentclass{article}
     \begin{document}
       Hello World!
@@ -87,7 +87,7 @@
     def print_hello_world(name):
         print("Helló, ", name, "!")
     
-    \# Calling the function
+    # Calling the function
     print_hello_world("világ")
     Lásd az 1. kódot
 
@@ -118,7 +118,7 @@
     Fejezet címe
     Szakasz címe
     Az 1. fejezetben
-    Lásd még \[1, 27. oldal\], illetve \[3\]. Ajánlott feladatgyűjtemények: \[2,4\].
+    Lásd még [1, 27. oldal], illetve [3]. Ajánlott feladatgyűjtemények: [2,4].
     Daróczy Zoltán: Mérték és integrál, Budapest, 1984, Tankönyvkiadó.
     Denkinger Géza: Valószínűségszámítási gyakorlatok, Budapest, 1986, Tankönyvkiadó.
     Fazekas István: Valószínűségszámítás, Debrecen, 2000, Debreceni Egyetem Kossuth Egyetemi Kiadója.
