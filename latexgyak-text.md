@@ -1,4 +1,4 @@
-# A LaTeX gyakorlatokhoz tartozó megformálandó szövegek 
+# A LaTeX gyakorlatok formázatlan szövegei 
 
 ## 1. gyakorlat
 
