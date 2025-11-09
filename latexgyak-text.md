@@ -232,3 +232,92 @@
     Moivre-Laplace-tétel
     Ha az ... valószínűségi változók azonos karakterisztikus eloszlásúak, akkor a centrális határeloszlási tételből speciálisan az úgynevezett Moivre-Laplace-tételt kapjuk.
     KÖSZÖNÖM A FIGYELMET!
+
+<!-- Copy-gomb: CSS -->
+<style>
+pre { position: relative; overflow: auto; }
+.copy-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  border: none;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 12px;
+}
+.copy-btn:focus { outline: 2px solid #fff; }
+.copy-btn .icon { width: 16px; height: 16px; display:inline-block; vertical-align:middle; }
+.copy-btn.copied { background: rgba(0,128,0,0.8); }
+</style>
+
+<!-- Copy-gomb: JS -->
+<script>
+(function(){
+  const svg = '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+  function makeButton() {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.type = 'button';
+    btn.title = 'Kód másolása';
+    btn.setAttribute('aria-label','Kód másolása');
+    btn.innerHTML = svg;
+    return btn;
+  }
+
+  function getCodeText(pre) {
+    const code = pre.querySelector('code');
+    return (code ? code.innerText : pre.innerText).replace(/\u00A0/g,' ');
+  }
+
+  function installButtons() {
+    document.querySelectorAll('pre').forEach(pre => {
+      if (pre.querySelector('.copy-btn')) return;
+      const text = getCodeText(pre).trim();
+      if (!text) return;
+      pre.style.position = pre.style.position || 'relative';
+      const btn = makeButton();
+      pre.appendChild(btn);
+
+      btn.addEventListener('click', async (e) => {
+        e.preventDefault();
+        const txt = getCodeText(pre);
+        try {
+          await navigator.clipboard.writeText(txt);
+          btn.classList.add('copied');
+          btn.title = 'Másolva';
+          btn.innerHTML = '✓';
+          setTimeout(()=>{ btn.classList.remove('copied'); btn.innerHTML = svg; btn.title='Kód másolása'; }, 1800);
+        } catch (err) {
+          const ta = document.createElement('textarea');
+          ta.value = txt;
+          document.body.appendChild(ta);
+          ta.select();
+          try { document.execCommand('copy'); 
+            btn.classList.add('copied');
+            btn.innerHTML = '✓';
+            setTimeout(()=>{ btn.classList.remove('copied'); btn.innerHTML = svg; }, 1800);
+          } catch(e2) {
+            alert('Másolás sikertelen — jelöld ki és másold manuálisan.');
+          }
+          document.body.removeChild(ta);
+        }
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', installButtons);
+  } else {
+    installButtons();
+  }
+  const observer = new MutationObserver(installButtons);
+  observer.observe(document.body, { childList: true, subtree: true });
+})();
+</script>
