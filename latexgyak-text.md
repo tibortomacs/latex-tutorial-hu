@@ -269,8 +269,8 @@ pre { position: relative; overflow: auto; }
     const btn = document.createElement('button');
     btn.className = 'copy-btn';
     btn.type = 'button';
-    btn.title = 'Kód másolása';
-    btn.setAttribute('aria-label','Kód másolása');
+    btn.title = 'Szöveg másolása';
+    btn.setAttribute('aria-label','Szöveg másolása');
     btn.innerHTML = svg;
     return btn;
   }
@@ -297,7 +297,7 @@ pre { position: relative; overflow: auto; }
           btn.classList.add('copied');
           btn.title = 'Másolva';
           btn.innerHTML = '✓';
-          setTimeout(()=>{ btn.classList.remove('copied'); btn.innerHTML = svg; btn.title='Kód másolása'; }, 1800);
+          setTimeout(()=>{ btn.classList.remove('copied'); btn.innerHTML = svg; btn.title='Szöveg másolása'; }, 1800);
         } catch (err) {
           const ta = document.createElement('textarea');
           ta.value = txt;
