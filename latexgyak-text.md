@@ -1,4 +1,4 @@
-# A LaTeX gyakorlatok formázatlan szövegei 
+# Formázatlan szöveg a LaTeX gyakorlatokhoz 
 
 ## 1. gyakorlat
 
@@ -74,16 +74,58 @@
 ## 6. gyakorlat
 
     \emph{kiemelendő szöveg} és \verb|verbatim szöveg|
+    
     \documentclass{article}
     \begin{document}
       Hello World!
     \end{document}
+    
     \documentclass{article}
     \begin{document}
       Hello World!
     \end{document}
+    
     Egy Delphi kód
+
+    unit Unit1;
+    
+    interface
+    
+    uses
+      Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, Dialogs, StdCtrls;
+    
+    type
+    
+      { TForm1 }
+    
+      TForm1 = class(TForm)
+        Button1: TButton;
+        Label1: TLabel;
+        procedure Button1Click(Sender: TObject);
+    
+      private
+        { Private declarations }
+      public
+        { Public declarations }
+    
+      end;
+    
+    var
+      Form1: TForm1;
+    
+    implementation
+    
+    {$R *.dfm}
+    
+    procedure TForm1.Button1Click(Sender: TObject);
+    begin
+      Label1.Caption := 'Helló, világ!';
+    end;
+    
+    end.      
+
     Egy Python kód
+    
     def print_hello_world(name):
         print("Helló, ", name, "!")
     
