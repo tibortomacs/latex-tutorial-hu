@@ -1,4 +1,4 @@
-# Formázatlan szöveg a LaTeX gyakorlatokhoz 
+# Formázatlan szöveg a [LaTeX gyakorlatokhoz](https://tomacstibor.uni-eszterhazy.hu/latex.html)
 
 ## 1. gyakorlat
 
