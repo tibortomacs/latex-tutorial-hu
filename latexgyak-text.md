@@ -74,17 +74,17 @@
 ## 6. gyakorlat
 
     \emph{kiemelendő szöveg} és \verb|verbatim szöveg|
-    
+
     \documentclass{article}
     \begin{document}
       Hello World!
     \end{document}
-    
+
     \documentclass{article}
     \begin{document}
       Hello World!
     \end{document}
-    
+
     Egy Delphi kód
 
     unit Unit1;
@@ -125,12 +125,13 @@
     end.      
 
     Egy Python kód
-    
+
     def print_hello_world(name):
         print("Helló, ", name, "!")
     
     # Calling the function
     print_hello_world("világ")
+
     Lásd az 1. kódot
 
 ## 7. gyakorlat
