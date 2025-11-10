@@ -124,13 +124,13 @@
       Label1.Caption := 'Helló, világ!';
     end;
     
-    end.      
+    end.
 
     Egy Python kód
 
     def print_hello_world(name):
         print("Helló, ", name, "!")
-    
+
     # Calling the function
     print_hello_world("világ")
 
