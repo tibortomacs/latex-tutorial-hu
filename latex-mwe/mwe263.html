@@ -56,16 +56,18 @@
 \begin{luacode}
 function rows(n)
   for i = 0, n do
-    x = 0.1 * i 
-    y = math.sin(x) 
+    x = 0.1 * i
+    y = math.sin(x)
     z = math.cos(x)
-    tex.sprint(x .. " & " .. y .. " & " .. z .. " \\\\")
+    y4 = string.format("%.4f", y)
+    z4 = string.format("%.4f", z)
+    tex.sprint(x .. " & " .. y4 .. " & " .. z4 .. " \\\\")
   end
 end
 \end{luacode}
 
 \def\sincostable#1{%
-  \begin{tabular}{lll}
+  \begin{tabular}{@{}ccc@{}}
     $x$ & $\sin(x)$ & $\cos(x)$ \\ \hline
     \directlua{rows(#1)}
   \end{tabular}}
