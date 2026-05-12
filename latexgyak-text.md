@@ -176,7 +176,7 @@
     Tóth Szabolcs matematika BSc
     Dr. Nagy Kálmán egyetemi docens
     Eger
-    2025
+    2026
     Bevezetés
     A valószínűségszámítás alapfogalmai
     Bernoulli tapasztalata
