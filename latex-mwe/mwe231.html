@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LaTeX példa</title>
+<meta charset="UTF-8">
+<link href="mwe.png" rel="shortcut icon" type="image/png">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.min.js"></script>
+<script src="https://davidcarlisle.github.io/latexcgi/runlatex.js"></script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Philosopher&display=swap');
+body {
+  font: 22px 'Philosopher', sans-serif;
+  margin: auto;
+  max-width: 900px;
+}
+.ace_editor {
+  font-size: 15px;
+  border: 2px solid gray;
+  margin-bottom: 10px;
+  width: 100%;
+}
+</style>
+
+<script>
+runlatex.editorlines = 50;
+runlatex.overleafURI = null;
+runlatex.texts = {
+  "TeXLive.net":   "PDF generálása",
+  "Delete Output": "Kimenet törlése",
+  "Compiling PDF": "Kérem várjon",
+}
+</script>
+</head>
+
+<body>
+
+<h3>LaTeX példa Tómács Tibor <a href="https://tibortomacs.github.io/latex-tutorial-hu/latex.pdf">LaTeX</a> című könyvéből</h3>
+
+<div>
+<pre>
+\documentclass[a4paper,12pt,twoside]{report}
+\usepackage[T1]{fontenc}
+\PassOptionsToPackage{defaults=hu-min}{magyar.ldf}
+\usepackage[magyar]{babel}
+\usepackage{hulipsum}
+
+\makeatletter
+\def\ps@sajat{%
+\def\chaptermark##1{\markboth{%
+                   \thechapter.~\@chapapp.\enspace##1}{}}
+\def\sectionmark##1{\markright{\thesection.\enspace##1}}
+\def\@oddfoot{}
+\def\@evenfoot{}
+\def\@oddhead{\rightmark\hfill\thepage}
+\def\@evenhead{\thepage\hfill\leftmark}}
+\makeatother
+
+\pagestyle{sajat}
+
+\begin{document}
+
+\chapter{Fejezetcím}
+
+\section{Szakaszcím}
+
+\hulipsum
+
+\end{document}
+</pre>
+</div>
+</body>

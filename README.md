@@ -1,0 +1,1 @@
+# [LaTeX tananyagok magyarul](https://tibortomacs.github.io/latex-tutorial-hu)

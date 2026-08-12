@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html"; charset="UTF-8" http-equiv="content-type">
+  <title>MathJax példa</title>
+  
+<style>
+body{font: normal 130% "Times New Roman", Times, serif; padding: 40px;}
+</style>
+  
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<script>
+window.MathJax = {
+  tex: {
+    tags: 'ams',
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+</script>
+   
+</head>
+<body>
+<h1>Egy példa html oldal a MathJax használatára</h1>
+<p>Legyen $X$ egy halmaz. Az $\mathcal{A}\subset\mathcal{P}(X)$ halmazrendszert <em>$\sigma$-algebrának</em> nevezzük, ha
+<ol>
+<li> $X\in\mathcal{A}$,</li>
+<li> $\overline{A}=X\setminus A\in\mathcal{A}\quad\forall A\in\mathcal{A}$,</li>
+<li> $\bigcup_{i=1}^\infty A_{i}\in\mathcal{A}$, ha $A_{i}\in\mathcal{A}$ $(i\in\mathbb{N})$.</li>
+</ol>
+Ekkor az $(X,\mathcal{A})$ rendezett párt <em>mérhető térnek</em>, az $\mathcal{A}$ elemeit <em>mérhető halmazoknak</em> nevezzük. A $\mu\colon\mathcal{A}\to[0,\infty]$ függvényt <em>mértéknek</em> nevezzük az $(X,\mathcal{A})$ mérhető téren, ha $\mu(\emptyset)=0$ és
+\begin{equation*}
+\mu\left(\bigcup_{i=1}^\infty A_{i}\right)=\sum_{i=1}^\infty\mu(A_{i})
+\end{equation*}
+minden $A_{i}\in\mathcal{A}$ $(i\in\mathbb{N})$ diszjunkt rendszerre. Ekkor $(X,\mathcal{A},\mu)$-t <em>mértéktérnek</em>, $\mu(A)$-t az $A$ mértékének nevezzük.
+</p>
+<p>
+Legyen $X$ egy halmaz, $\mathcal{H}\subset\mathcal{P}(X)$, $\nu\colon\mathcal{H}\to[0,\infty]$ és $\mu$ a $\nu$-höz tartozó külső mérték. $B\subset X$ pontosan akkor $\mu$-mérhető, ha
+\begin{equation}\label{egyenlet-feltetel}
+\nu(A)\geq\mu(A\cap B)+\mu(A\setminus B)\quad\forall A\in\mathcal{H}.
+\end{equation}
+Az \eqref{egyenlet-feltetel} szükségessége triviálisan teljesül. Az elégséges voltát később látjuk be.
+</p>
+<p>
+A véges értékkészletű függvényeket <em>egyszerű függvényeknek</em> nevezzük. Ha $X$ egy halmaz és $A\subset X$, akkor az
+\begin{equation*}
+I_{A}\colon X\to\mathbb{R},\quad I_{A}(x):=
+\begin{cases}
+1, & \text{ha $x\in A$,}\\
+0,  & \text{különben}
+\end{cases}
+\end{equation*}
+függvényt az $A$ <em>karakterisztikus függvényének</em> nevezzük.
+</p>
+<p>
+<strong>Lebesgue majorált konvergencia tétele.</strong> Legyen $(X,\mathcal{A},\mu)$ mértéktér és $g,f,f_{n}\colon X\to\mathbb{R}_\text{b}$ $(n=1,2,3,\dots)$ mérhető függvények. Ha $g$ integrálható, $|f_{n}|\leq g$ $\forall n\in\mathbb{N}$-re és
+$\lim\limits_{n\to\infty}f_{n}=f$, akkor
+$\DeclareMathOperator{\diff}{d\!}$
+\begin{equation*}
+\lim_{n\to\infty}\int|f_{n}-f|\diff\mu=0\quad\text{és}\quad\lim_{n\to\infty}\int f_{n}\diff\mu=\int f\diff\mu.
+\end{equation*}
+</p>
+</body>
+</html>
