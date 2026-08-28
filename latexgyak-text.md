@@ -205,8 +205,11 @@
     Készítsen LaTeX-kódot, melynek ez a prezentáció az eredménye!
     A megformálandó szöveg letölthető innen:
     https://tibortomacs.github.io/latex-tutorial-hu/latexgyak-text#10-gyakorlat
-    A megoldás letölthető innen:
+    Megoldás
+    Becsomagolva:
     https://tibortomacs.github.io/latex-tutorial-hu/latex-gyak10.zip
+    Overleafen:
+    https://www.overleaf.com/docs?snip_uri=https://tibortomacs.github.io/latex-tutorial-hu/latex-gyak10.zip
     Valószínűségszámítás
     Határérték tételek
     Nagy számok Bernoulli-féle törvénye
