@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LaTeX példa</title>
+<meta charset="UTF-8">
+<link href="mwe.png" rel="shortcut icon" type="image/png">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.min.js"></script>
+<script src="https://davidcarlisle.github.io/latexcgi/runlatex.js"></script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Philosopher&display=swap');
+body {
+  font: 22px 'Philosopher', sans-serif;
+  margin: auto;
+  max-width: 900px;
+}
+.ace_editor {
+  font-size: 15px;
+  border: 2px solid gray;
+  margin-bottom: 10px;
+  width: 100%;
+}
+</style>
+
+<script>
+runlatex.editorlines = 50;
+runlatex.overleafURI = null;
+runlatex.texts = {
+  "TeXLive.net":   "PDF generálása",
+  "Delete Output": "Kimenet törlése",
+  "Compiling PDF": "Kérem várjon",
+}
+</script>
+</head>
+
+<body>
+
+<h3>LaTeX példa Tómács Tibor <a href="https://tibortomacs.github.io/latex-tutorial-hu/latex.pdf">LaTeX</a> című könyvéből</h3>
+
+<div>
+<pre>
+\documentclass{article}
+\usepackage{pict2e}
+
+\begin{document}
+
+\setlength{\unitlength}{1cm}
+\begin{picture}(2,2)
+  \polyline(2,0)(0,0)(0,2)
+  \put(0,0){\arc[0,90]{2}}
+\end{picture}
+
+\end{document}
+</pre>
+</div>
+</body>
