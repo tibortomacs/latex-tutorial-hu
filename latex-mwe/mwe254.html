@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LaTeX példa</title>
+<meta charset="UTF-8">
+<link href="mwe.png" rel="shortcut icon" type="image/png">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.min.js"></script>
+<script src="https://davidcarlisle.github.io/latexcgi/runlatex.js"></script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Philosopher&display=swap');
+body {
+  font: 22px 'Philosopher', sans-serif;
+  margin: auto;
+  max-width: 900px;
+}
+.ace_editor {
+  font-size: 15px;
+  border: 2px solid gray;
+  margin-bottom: 10px;
+  width: 100%;
+}
+</style>
+
+<script>
+runlatex.editorlines = 50;
+runlatex.overleafURI = null;
+runlatex.texts = {
+  "TeXLive.net":   "PDF generálása",
+  "Delete Output": "Kimenet törlése",
+  "Compiling PDF": "Kérem várjon",
+}
+</script>
+</head>
+
+<body>
+
+<h3>LaTeX példa Tómács Tibor <a href="https://tibortomacs.github.io/latex-tutorial-hu/latex.pdf">LaTeX</a> című könyvéből</h3>
+
+<div>
+<pre>
+\documentclass[a4paper,12pt]{article}
+\usepackage[T1]{fontenc}
+\PassOptionsToPackage{defaults=hu-min}{magyar.ldf}
+\usepackage[magyar]{babel}
+
+\begin{document}
+
+Lásd \cite{PlainTeX} és \cite[134.~oldal]{LaTeX}\dots
+Lásd \cite{PlainTeX,LaTeX}\dots
+Lásd \acite{PlainTeX,LaTeX} könyvekben\dots
+
+\begin{thebibliography}{2}
+\bibitem{PlainTeX} Bujdosó Gyöngyi, Fazekas Attila: 
+        \TeX\ kezdőlépések, Budapest, 1997, Tertia Kiadó.
+\bibitem{LaTeX} Wettl Ferenc, Mayer Gyula, Szabó Péter: 
+        \LaTeX\ kézikönyv, Budapest, 2004, Panem Könyvkiadó.
+\end{thebibliography}
+
+\end{document}
+</pre>
+</div>
+</body>
