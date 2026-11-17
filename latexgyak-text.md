@@ -148,7 +148,7 @@
     Pitagorasz
     Tétel szövege.
     Lemma szövege.
-    A 3. tétel bizonyítása
+    Az 1.3. tétel bizonyítása
     Bizonyítás szövege.
     Megjegyzés szövege.
     Paragrafus címe
