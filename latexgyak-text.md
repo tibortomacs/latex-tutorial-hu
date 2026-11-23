@@ -163,7 +163,8 @@
     Fejezet címe
     Szakasz címe
     Az 1. fejezetben
-    Lásd még [1, 27. oldal], illetve [3]. Ajánlott feladatgyűjtemények: [2,4].
+    Lásd még [3], illetve [1, 27. oldal].
+    Ajánlott feladatgyűjtemények: [2,4].
     Daróczy Zoltán: Mérték és integrál, Budapest, 1984, Tankönyvkiadó.
     Denkinger Géza: Valószínűségszámítási gyakorlatok, Budapest, 1986, Tankönyvkiadó.
     Fazekas István: Valószínűségszámítás, Debrecen, 2000, Debreceni Egyetem Kossuth Egyetemi Kiadója.
